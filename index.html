@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#fbf7f7">
+<title>Glow Routine</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+<header><div><small>GLOW ROUTINE</small><h1>Good morning, <span>Ysamar</span></h1><p id="date"></p></div><button class="avatar">Y</button></header>
+<main>
+<section class="hero"><div><small>TODAY</small><h2>Keep it simple.<br>Keep glowing.</h2><p>A gentle routine that fits your real life.</p></div><b>✦</b></section>
+
+<section class="routines">
+<article class="routine morning"><i>☀︎</i><div><small>MORNING</small><h3>Morning Routine</h3><p>Start your day feeling fresh.</p></div><button onclick="openRoutine('morning')">Start</button></article>
+<article class="routine night"><i>☾</i><div><small>NIGHT</small><h3>Night Routine</h3><p>Wind down and reset.</p></div><button onclick="openRoutine('night')">Start</button></article>
+</section>
+
+<section class="streak"><div><small>YOUR GLOW</small><h3><span id="streak">0</span> day streak</h3><p>Small steps count.</p></div><b>✧</b></section>
+
+<section id="shelf"><div class="heading"><div><small>MY SHELF</small><h2>Products I actually use</h2></div><button class="link" onclick="openAdd()">+ Add</button></div><div id="products" class="products"></div></section>
+<section><div class="heading"><div><small>RECENTLY USED</small><h2>Your routine, your way</h2></div></div><div id="used" class="used"></div></section>
+</main>
+
+<nav><button class="active" onclick="scrollToTop()">⌂<small>Home</small></button><button onclick="document.getElementById('shelf').scrollIntoView({behavior:'smooth'})">▢<small>Shelf</small></button><button onclick="document.querySelector('.routines').scrollIntoView({behavior:'smooth'})">✦<small>Routine</small></button></nav>
+</div>
+
+<div id="routineModal" class="modal hidden"><div class="sheet"><button class="close" onclick="closeModal('routineModal')">×</button><small id="routineType">MORNING</small><h2 id="routineTitle">Choose what you used</h2><p>Tap the products you actually used. No forced steps.</p><div id="choices"></div><button class="save" onclick="saveRoutine()">Save routine</button></div></div>
+<div id="addModal" class="modal hidden"><div class="sheet"><button class="close" onclick="closeModal('addModal')">×</button><small>MY SHELF</small><h2>Add a product</h2><label>Product name<input id="newName" placeholder="e.g. Gentle Cleanser"></label><label>Category<select id="newCategory"><option>Cleanser</option><option>Serum</option><option>Moisturizer</option><option>Sunscreen</option><option>Treatment</option><option>Other</option></select></label><button class="save" onclick="addProduct()">Add to shelf</button></div></div>
+<div id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
